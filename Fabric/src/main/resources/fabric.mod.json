@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "improved_animations",
+  "version": "${version}",
+  "name": "Improved Animations",
+  "description": "A mod for Fabric and Forge that rewrites player animations!",
+  "authors": [
+    "Qboi123",
+    "DrAlpha",
+    "MincraftEinstein"
+  ],
+  "contributors": [
+    "DrAlpha",
+    "fmbellomy",
+    "mmm1245",
+    "James Pelter (Trainguy)",
+    "Marvin Schürz (MineToBlend)",
+    "Coffee",
+    "MincraftEinstein"
+  ],
+  "contact": {
+	"issues": "https://github.com/LizIsTired/animation-overhaul/issues",
+    "sources": "https://github.com/LizIsTired/animation-overhaul"
+  },
+  "license": "GPLv3",
+  "environment": "*",
+  "icon": "logo.png",
+  "mixins": [
+    "improved_animationsCommon.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "einstein.improved_animations.core.fabric.ImprovedAnimationsFabric"
+    ],
+    "client": [
+      "einstein.improved_animations.core.fabric.ImprovedAnimationsClient"
+    ]
+  },
+  "depends": {
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  }
+}

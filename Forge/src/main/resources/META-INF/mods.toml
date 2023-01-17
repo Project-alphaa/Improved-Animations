@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[44,)"
+license="GPLv3"
+
+[[mods]]
+    modId="improved_animations"
+    version = "${version}"
+    displayName="Improved Animations"
+    #updateJSONURL="https://change.me.example.invalid/updates.json"
+    #displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
+    logoFile="banner.png"
+    credits="fmbellomy, James Pelter (Trainguy), MincraftEinstein"
+    authors="Qboi123, DrAlpha, MincraftEinstein"
+    description='''
+A mod for Fabric and Forge that rewrites player animations!
+'''
+
+[modproperties.improved_animations]
+    catalogueImageIcon="pack.png"
+
+[[dependencies.improved_animations]]
+    modId="forge"
+    mandatory=true
+    versionRange="[44,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.improved_animations]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.3,1.20)"
+    ordering="NONE"
+    side="BOTH"
