@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "einstein.improved_animations.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "improved_animations.refmap.json",
   "client": [
     "MixinBlockEntity",
     "MixinCapeLayer",
