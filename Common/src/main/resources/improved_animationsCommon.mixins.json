@@ -5,13 +5,11 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "improved_animations.refmap.json",
   "client": [
-    "MixinBlockEntity",
     "MixinCapeLayer",
     "MixinElytraLayer",
     "MixinGameRenderer",
     "MixinInventoryScreen",
     "MixinItemInHandLayer",
-    "MixinLivingEntity",
     "MixinLivingEntityRenderer",
     "debug.MixinDebugScreenOverlay",
     "models.MixinPiglinModel",
