@@ -11,6 +11,8 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.HumanoidArm;
@@ -938,29 +940,8 @@ public class PlayerPartAnimator extends LivingEntityPartAnimator<Player, PlayerM
     }
 
     private static HumanoidModel.ArmPose getArmPose(LivingEntity livingEntity, InteractionHand interactionHand) {
-        ItemStack itemStack = livingEntity.getItemInHand(interactionHand);
-        if (itemStack.isEmpty()) {
-            return HumanoidModel.ArmPose.EMPTY;
-        }
-        if (livingEntity.getUsedItemHand() == interactionHand && livingEntity.getUseItemRemainingTicks() > 0) {
-            UseAnim useAnim = itemStack.getUseAnimation();
-            if (useAnim == UseAnim.BLOCK) {
-                return HumanoidModel.ArmPose.BLOCK;
-            }
-            if (useAnim == UseAnim.BOW) {
-                return HumanoidModel.ArmPose.BOW_AND_ARROW;
-            }
-            if (useAnim == UseAnim.SPEAR) {
-                return HumanoidModel.ArmPose.THROW_SPEAR;
-            }
-            if (useAnim == UseAnim.CROSSBOW && interactionHand == livingEntity.getUsedItemHand()) {
-                return HumanoidModel.ArmPose.CROSSBOW_CHARGE;
-            }
-            if (useAnim == UseAnim.SPYGLASS) {
-                return HumanoidModel.ArmPose.SPYGLASS;
-            }
-        } else if (!livingEntity.swinging && itemStack.is(Items.CROSSBOW) && CrossbowItem.isCharged(itemStack)) {
-            return HumanoidModel.ArmPose.CROSSBOW_HOLD;
+        if (livingEntity instanceof AbstractClientPlayer clientPlayer) {
+            return PlayerRenderer.getArmPose(clientPlayer, interactionHand);
         }
         return HumanoidModel.ArmPose.ITEM;
     }

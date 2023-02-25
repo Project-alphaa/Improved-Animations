@@ -21,9 +21,9 @@ dependencies {
 }
 
 loom {
-    mixin {
-        defaultRefmapName = "${mod_id}.refmap.json"
-    }
+    accessWidenerPath = project(":Common").file("src/main/resources/improved_animations.accesswidener")
+
+    mixin.defaultRefmapName = "${mod_id}.refmap.json"
 
     runs {
         client {

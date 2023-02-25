@@ -27,6 +27,7 @@
   "mixins": [
     "improved_animationsCommon.mixins.json"
   ],
+  "accessWidener": "improved_animations.accesswidener",
   "entrypoints": {
     "main": [
       "einstein.improved_animations.core.fabric.ImprovedAnimationsFabric"

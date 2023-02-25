@@ -1,4 +1,3 @@
 accessWidener	v1	     named
 
-accessible field net/minecraft/client/model/PlayerModel cloak Lnet/minecraft/client/model/geom/ModelPart;
-accessible field net/minecraft/client/model/PiglinModel leftEar Lnet/minecraft/client/model/geom/ModelPart;
+accessible method net/minecraft/client/renderer/entity/player/PlayerRenderer getArmPose (Lnet/minecraft/client/player/AbstractClientPlayer;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/client/model/HumanoidModel$ArmPose;
