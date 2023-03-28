@@ -9,7 +9,6 @@
     "MixinElytraLayer",
     "MixinGameRenderer",
     "MixinInventoryScreen",
-    "MixinItemInHandLayer",
     "MixinLivingEntityRenderer",
     "debug.MixinDebugScreenOverlay",
     "models.MixinPiglinModel",
