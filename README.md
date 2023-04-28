@@ -34,7 +34,7 @@ You can now play Minecraft in a more enjoyable way using our new Minecraft anima
 <li>TrainGuy9512 (Former Author)</li>
 <li>MincraftEinstein (Maintainer)</li>
 <li>Qboi123 (Contributor)</li>
-<li>Kelvin (Contributor)</li>
+<li>Kelvin285 (Contributor)</li>
 </ul>
 <br>
 
