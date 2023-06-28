@@ -1,5 +1,8 @@
 # Improved Animations
 
+![Improved animation banner](https://github.com/Alpha-thebaby/ImprovedAnimations/assets/115327854/ee8f9cb7-f725-4df1-9bb4-3db745a97751)
+
+
 [![](https://img.shields.io/badge/Curseforge-Download-orange?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/improved-animations)
 
 You can now play Minecraft in a more enjoyable way using our new Minecraft animations that make the game more satisfying to play.
