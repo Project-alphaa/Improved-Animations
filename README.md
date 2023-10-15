@@ -6,34 +6,11 @@
 
 [![](https://img.shields.io/badge/Curseforge-Download-orange?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/improved-animations)
 
-You can now play Minecraft in a more enjoyable way using our new Minecraft animations that make the game more satisfying to play.
-<br>
+We are excited to announce our latest addition to enhance your Minecraft experience. Our new Minecraft animations feature a range of cool animations that make the game more enjoyable to play. From basic movements like walking and sprinting to more complex actions like jumping, sprint-jumping, swimming, sword slashes, fist punching, sneaking, and falling - our animations will make exploring Minecraft much more fun. So, get ready to immerse yourself in the game and have a blast!
+
  
-<details>
-<summary><b>Animations</b></summary>
-<b>Player Animations:</b>
-<br>
-<ul>
-<li>Basic movement</li>
-<li>Sprinting</li>
-<li>Jumping</li>
-<li>Sprint jumping</li>
-<li>Swimming</li>
-<li>Sword slashes</li>
-<li>Fist punching</li>
-<li>Sneaking</li>
-<li>Ladder climbing</li>
-<li>Falling</li>
-</ul>
  
-<b>Creeper Animations:</b>
-<ul>
-<li>Basic movement</li>
-</ul>
-</details>
-<br>
- 
-## 🙎‍♂️ Credits
+## 🙎‍♂️ Crontributors
 <ul>
 <li>TrainGuy9512 (Former Author)</li>
 <li>MincraftEinstein (Maintainer)</li>
