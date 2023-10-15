@@ -1,6 +1,6 @@
 # Improved Animations
 
-![Uploading image.png…]()
+![image](https://github.com/Alpha-thebaby/ImprovedAnimations/assets/115327854/8f5e6c1a-fa6c-4152-a0ce-98d4b266e579)
 
 [![](https://img.shields.io/badge/Curseforge-Download-orange?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/improved-animations)
 
