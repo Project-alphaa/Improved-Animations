@@ -16,8 +16,8 @@ We are excited to announce our latest addition to enhance your Minecraft experie
 - MincraftEinstein (Author)
 - Qboi123 (Author)
 - Kelvin285 (Contributor)
-- Fmbellomy (Contributor)
-- Mm1245 (Contributor)
+- fmbellomy (Contributor)
+- mmm1245 (Contributor)
 
 
 ---
