@@ -1,122 +1,108 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
-    }
-}
-apply plugin: 'java'
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-apply plugin: 'org.spongepowered.mixin'
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
 
-version = "${mod_v}"
-group = "${mod_group}"
-archivesBaseName = "${mod_name}-forge-${mc_v}"
-
-mixin {
-    add sourceSets.main, "${mod_id}.refmap.json"
-    config "${mod_id}Common.mixins.json"
+plugins {
+    id "com.github.johnrengelman.shadow" version "7.0.0"
 }
 
-minecraft {
-    mappings channel: 'official', version: "${mc_v}"
+archivesBaseName = "${rootProject.archivesBaseName}-${project.name}"
 
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+loom {
+    //accessWidenerPath.set(project(":common").file("src/main/resources/${project.mod_id}.accesswidener"))
 
-    runs {
-        client {
-            workingDirectory project.file('run')
-            ideaModule "${rootProject.name}.${project.name}.main"
-            taskName 'Client'
-            mods {
-                modClientRun {
-                    source sourceSets.main
-                    source project(":Common").sourceSets.main
-                }
-            }
-        }
+    forge {
+        mixinConfig "${project.mod_id}-common.mixins.json"
+        mixinConfig "${project.mod_id}.mixins.json"
 
-        server {
-            workingDirectory project.file('run')
-            ideaModule "${rootProject.name}.${project.name}.main"
-            taskName 'Server'
-            mods {
-                modServerRun {
-                    source sourceSets.main
-                    source project(":Common").sourceSets.main
-                }
-            }
-        }
-
-        data {
-            workingDirectory project.file('run')
-            ideaModule "${rootProject.name}.${project.name}.main"
-            args '--mod', "${mod_id}", '--all', '--output', file("src/generated/resources/"), '--existing', project(":Common").file("src/main/resources/")
-            taskName 'Data'
-            mods {
-                modDataRun {
-                    source sourceSets.main
-                    source project(":Common").sourceSets.main
-                }
-            }
-        }
+//        convertAccessWideners.set(true)
+//        extraAccessWideners.add("${project.mod_id}.accesswidener")
+    }
+    mixin {
+        defaultRefmapName = "${project.mod_id}-refmap.json"
     }
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDir "src/generated/resources"
-        }
-    }
+architectury {
+    platformSetupLoomIde()
+    forge()
 }
+
+configurations {
+    common
+    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentForge.extendsFrom common
+}
+
 
 dependencies {
-    compileOnly project(":Common")
-    minecraft "net.minecraftforge:forge:${mc_v}-${forge_v}"
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
 
-    implementation fg.deobf("curse.maven:catalogue-459701:${catalogue_v}")
-    implementation fg.deobf("curse.maven:configured-457570:${configured_v}")
-}
+    modApi fileTree(dir: 'libs', include: ['*.jar']) //modApi("gg.moonflower:pollen-forge:${rootProject.pollen_version}") { transitive = false }
 
-jar {
-    exclude("improved_animations.accesswidener")
+    modRuntimeOnly "curse.maven:configured-457570:3559398"
+    modRuntimeOnly "curse.maven:catalogue-459701:3559402"
+
+    common(project(path: ":common", configuration: "namedElements")) { transitive false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
 
 processResources {
-    from project(":Common").sourceSets.main.resources
-    inputs.property "version", "${mod_v}"
+    inputs.property "id", rootProject.mod_id
+    inputs.property "name", rootProject.mod_name
+    inputs.property "version", rootProject.mod_version
+    inputs.property "repo", rootProject.name
 
-    filesMatching("META-INF/mods.toml") {
-        expand "version": "${mod_v}"
+    filesMatching(["META-INF/mods.toml", "pack.mcmeta"]) {
+        expand "id": rootProject.mod_id,
+                "name": rootProject.mod_name,
+                "version": rootProject.mod_version,
+                "repo": rootProject.name
+    }
+
+    doLast {
+        fileTree(dir: outputs.files.asPath, include: "**/*.json").each {
+            File file -> file.text = JsonOutput.toJson(new JsonSlurper().parse(file))
+        }
     }
 }
 
-tasks.withType(JavaCompile) {
-    source(project(":Common").sourceSets.main.allSource)
+shadowJar {
+    exclude "fabric.mod.json"
+    exclude "archiectury.common.json"
+
+    configurations = [project.configurations.shadowCommon]
+    classifier "dev-shadow"
 }
 
-jar.finalizedBy('reobfJar')
+remapJar {
+    input.set shadowJar.archiveFile
+    dependsOn shadowJar
+    classifier null
+}
+
+jar {
+    classifier "dev"
+}
+
+sourcesJar {
+    def commonSources = project(":common").sourcesJar
+    dependsOn commonSources
+    from commonSources.archiveFile.map { zipTree(it) }
+}
+
+components.java {
+    withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
+        skip()
+    }
+}
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            groupId project.group
-            artifactId project.archivesBaseName
-            version project.version
-            artifact jar
-        }
-    }
-    repositories {
-        maven {
-            url "file://" + System.getenv("local_maven")
+        mavenForge(MavenPublication) {
+            artifactId = project.archivesBaseName
+            from components.java
         }
     }
 }

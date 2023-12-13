@@ -1,80 +1,104 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
 plugins {
-    id 'fabric-loom' version '0.12-SNAPSHOT'
-    id 'maven-publish'
-    id 'idea'
+    id "com.github.johnrengelman.shadow" version "7.0.0"
 }
 
-version = "${mod_v}"
-group = "${mod_group}"
-archivesBaseName = "${mod_name}-fabric-${mc_v}"
+archivesBaseName = "${rootProject.archivesBaseName}-${project.name}"
 
-dependencies {
-    minecraft "com.mojang:minecraft:${mc_v}"
-    mappings loom.officialMojangMappings()
-
-    modImplementation "net.fabricmc:fabric-loader:${fabric_v}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_v}+${mc_v}"
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-    implementation project(":Common")
-
-    modImplementation("curse.maven:modmenu-308702:${modmenu_v}")
+architectury {
+    platformSetupLoomIde()
+    fabric()
 }
 
 loom {
-    accessWidenerPath = project(":Common").file("src/main/resources/improved_animations.accesswidener")
-
-    mixin.defaultRefmapName = "${mod_id}.refmap.json"
-
-    runs {
-        client {
-            client()
-            setConfigName("Fabric Client")
-            ideConfigGenerated(true)
-            runDir("run")
-        }
-        server {
-            server()
-            setConfigName("Fabric Server")
-            ideConfigGenerated(true)
-            runDir("run")
-        }
+    mixin {
+        defaultRefmapName = "${project.mod_id}-refmap.json"
     }
+    //accessWidenerPath.set(project(":common").file("src/main/resources/${project.mod_id}.accesswidener"))
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDirs += ["src/main/generated"]
-        }
-    }
+configurations {
+    common
+    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
+}
+
+
+repositories {
+    maven { url "https://maven.terraformersmc.com/" }
+    mavenCentral()
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+    modApi fileTree(dir: 'libs', include: ['*.jar']) //modApi("gg.moonflower:pollen-fabric:${rootProject.pollen_version}") { transitive = false }
+
+    modRuntimeOnly "com.terraformersmc:modmenu:${rootProject.mod_menu_version}"
+    //modRuntimeOnly "curse.maven:skinlayers3d-521480:3772835"
+
+    common(project(path: ":common", configuration: "namedElements")) { transitive false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }
 
 processResources {
-    from project(":Common").sourceSets.main.resources
-    inputs.property "version", "${mod_v}"
+    inputs.property "id", rootProject.mod_id
+    inputs.property "name", rootProject.mod_name
+    inputs.property "version", rootProject.mod_version
+    inputs.property "repo", rootProject.name
 
     filesMatching("fabric.mod.json") {
-        expand "version": "${mod_v}"
+        expand "id": rootProject.mod_id,
+                "name": rootProject.mod_name,
+                "version": rootProject.mod_version,
+                "repo": rootProject.name
+    }
+
+    doLast {
+        fileTree(dir: outputs.files.asPath, include: "**/*.json").each {
+            File file -> file.text = JsonOutput.toJson(new JsonSlurper().parse(file))
+        }
     }
 }
 
-tasks.withType(JavaCompile) {
-    source(project(":Common").sourceSets.main.allSource)
+shadowJar {
+    exclude "archiectury.common.json"
+
+    configurations = [project.configurations.shadowCommon]
+    classifier "dev-shadow"
+}
+
+remapJar {
+    input.set shadowJar.archiveFile
+    dependsOn shadowJar
+    classifier null
+}
+
+jar {
+    classifier "dev"
+}
+
+sourcesJar {
+    def commonSources = project(":common").sourcesJar
+    dependsOn commonSources
+    from commonSources.archiveFile.map { zipTree(it) }
+}
+
+components.java {
+    withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
+        skip()
+    }
 }
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            groupId project.group
-            artifactId project.archivesBaseName
-            version project.version
+        mavenFabric(MavenPublication) {
+            artifactId = project.archivesBaseName
             from components.java
-        }
-    }
-
-    repositories {
-        maven {
-            url "file://" + System.getenv("local_maven")
         }
     }
 }
