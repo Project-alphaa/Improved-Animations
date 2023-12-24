@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/badge/Discord-Invite-blue?style=for-the-badge&logo=discord)](https://discord.gg/the-alpha-server-852655613669277777)
 
 ### **📘 Description**
-We are excited to announce our latest addition to enhance your Minecraft experience. Our new Minecraft animations feature a range of cool animations that make the game more enjoyable to play. From basic movements like walking and sprinting to more complex actions like jumping, sprint-jumping, swimming, sword slashes, fist punching, sneaking, and falling - our animations will make exploring Minecraft much more fun. So, get ready to immerse yourself in the game and have a blast!
+We are excited to announce our latest addition to enhance your Minecraft experience. Our new Minecraft Improved Animations mod feature a range of cool animations that make the game more enjoyable to play. From basic movements like walking and sprinting to more complex actions like jumping, sprint-jumping, swimming, sword slashes, fist punching, sneaking, and falling - our animations will make exploring Minecraft much more fun. So, get ready to immerse yourself in the game and have a blast!
 
 ---
 
