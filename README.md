@@ -37,6 +37,6 @@ We are excited to announce our latest addition to enhance your Minecraft experie
 <br><br>
 **Q:** I would like to contribute to or maintain the mod. Would I be able to do so?
 <br>
-**A:** Of course, you can do both or help add a feature. Just make sure to let me know by contacting my Discord "dralphaa".
+**A:** Of course, you can do both or help add a feature. Just make sure to let me know by contacting my Discord "adamdawoud".
 
 
