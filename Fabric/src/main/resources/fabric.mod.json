@@ -3,25 +3,25 @@
   "id": "improved_animations",
   "version": "${version}",
   "name": "Improved Animations",
-  "description": "A mod for Fabric and Forge that rewrites player animations!",
+  "description": "Minecraft Animations Mod",
   "authors": [
-    "Qboi123",
-    "DrAlpha",
     "James Pelter (Trainguy)",
-    "MincraftEinstein"
+    "MincraftEinstein",
+    "Qboi123",
+    "adamdawoud"
   ],
   "contributors": [
-    "DrAlpha",
+    "adamdawoud",
     "fmbellomy",
     "mmm1245",
-    "Marvin Schürz (MineToBlend)",
-    "MincraftEinstein"
+    "MincraftEinstein",
+    "Kelvin285"
   ],
   "contact": {
-	"issues": "https://github.com/LizIsTired/animation-overhaul/issues",
-    "sources": "https://github.com/LizIsTired/animation-overhaul"
+	"issues": "https://github.com/Project-Alphaa/Improved-Animations/issues",
+    "sources": "https://github.com/Project-Alphaa/Improved-Animations"
   },
-  "license": "GPLv3",
+  "license": "MIT",
   "environment": "*",
   "icon": "logo.png",
   "mixins": [
