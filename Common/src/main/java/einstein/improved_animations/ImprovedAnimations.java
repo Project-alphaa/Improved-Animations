@@ -1,6 +1,5 @@
 package einstein.improved_animations;
 
-import einstein.improved_animations.animations.entity.CreeperPartAnimator;
 import einstein.improved_animations.animations.entity.PlayerPartAnimator;
 import einstein.improved_animations.util.data.LivingEntityAnimatorRegistry;
 import net.minecraft.world.entity.Entity;
@@ -16,7 +15,6 @@ public class ImprovedAnimations {
 
 	//public static final PollinatedRegistry<LivingEntityAnimator> ENTITY_ANIMATORS = PollinatedRegistry.createSimple(LivingEntityAnimator.class, new ResourceLocation(MOD_ID, "entity_animators"));
 	public static final LivingEntityAnimatorRegistry ENTITY_ANIMATORS = new LivingEntityAnimatorRegistry();
-	public static Entity debugEntity;
 
 	public static void onClientInit() {
 		registerEntityAnimators();
@@ -24,6 +22,5 @@ public class ImprovedAnimations {
 
 	private static void registerEntityAnimators(){
 		ENTITY_ANIMATORS.register(EntityType.PLAYER, new PlayerPartAnimator());
-		ENTITY_ANIMATORS.register(EntityType.CREEPER, new CreeperPartAnimator());
 	}
 }
