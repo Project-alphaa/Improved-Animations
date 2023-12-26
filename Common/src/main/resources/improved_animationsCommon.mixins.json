@@ -10,8 +10,6 @@
     "MixinGameRenderer",
     "MixinInventoryScreen",
     "MixinLivingEntityRenderer",
-    "debug.MixinDebugScreenOverlay",
-    "models.MixinPiglinModel",
     "models.MixinPlayerModel"
   ],
   "injectors": {
