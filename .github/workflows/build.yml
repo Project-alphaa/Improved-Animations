@@ -37,10 +37,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Artifacts-Fabric
-          path: fabric/build/libs/
+          path: Fabric/build/libs/
 
       - name: Capture build artifacts (Forge)
         uses: actions/upload-artifact@v2
         with:
           name: Artifacts-Forge
-          path: forge/build/libs/
+          path: Forge/build/libs/
