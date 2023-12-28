@@ -43,6 +43,10 @@ We apologize for any inconvenience this may have caused. If you are interested i
 <br>
 **A:** Yes, feel free to use this mod in your modpack.
 <br><br>
-**Q:** Can I port the mod?
+**Q:** What are the different game versions that this mod will support?
 <br>
-**A:** It's up to you if you do it, but it's your responsibility if there are copyright issues with Trainguy.
+**A:** Currently only version 1.19.3. If there is a high demand we will provide a 1.20 version.
+<br><br>
+**Q:** I would like to contribute to or maintain the mod. Would I be able to do so?
+<br>
+**A:** Of course, you can do both or help add a feature. Just make sure to let me know by contacting my Discord "adamdawoud".
