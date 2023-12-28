@@ -2,6 +2,7 @@
 
 ![image](https://github.com/Alpha-thebaby/ImprovedAnimations/assets/115327854/8f5e6c1a-fa6c-4152-a0ce-98d4b266e579)
 
+![](https://img.shields.io/badge/Mod_Loader-Fabric-green?style=for-the-badge)
 [![Alpha's Discord](https://img.shields.io/badge/Discord-Alpha%27s%20Server-blue?style=for-the-badge&logo=discord)](https://discord.gg/the-alpha-server-852655613669277777)
 [![Einstein's Discord](https://img.shields.io/badge/Discord-Einstein%27s%20Lab-blue?style=for-the-badge&logo=discord)](https://discord.gg/gSsaFAvrBM)
 
