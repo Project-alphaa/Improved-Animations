@@ -50,4 +50,4 @@ We apologize for any inconvenience this may have caused. If you are interested i
 <br><br>
 **Q:** I would like to contribute to or maintain the mod. Would I be able to do so?
 <br>
-**A:** Of course, you can do both or help add a feature. Just make sure to let me know by contacting my Discord "adamdawoud".
+**A:** Of course, you can do both or help add a feature. Just make sure to contact me through my Discord server.
