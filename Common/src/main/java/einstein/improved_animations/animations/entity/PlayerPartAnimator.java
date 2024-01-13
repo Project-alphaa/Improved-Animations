@@ -153,7 +153,7 @@ public class PlayerPartAnimator extends LivingEntityPartAnimator<Player, PlayerM
         // Begin sprint jump timers
         // Ticks after hitting ground
         float previousTicksAfterHittingGround = entityAnimationData.get(TICKS_AFTER_HITTING_GROUND).get();
-        float ticksAfterHittingGround = livingEntity.isOnGround() ? previousTicksAfterHittingGround + 1 : 0;
+        float ticksAfterHittingGround = livingEntity.onGround() ? previousTicksAfterHittingGround + 1 : 0;
         entityAnimationData.setValue(TICKS_AFTER_HITTING_GROUND, ticksAfterHittingGround);
 
         boolean shouldResetJumpTimer =
@@ -173,7 +173,7 @@ public class PlayerPartAnimator extends LivingEntityPartAnimator<Player, PlayerM
 
         // Sprint jump weight
         boolean isJumping =
-                (ticksAfterHittingGround < 1 || !livingEntity.isOnGround())
+                (ticksAfterHittingGround < 1 || !livingEntity.onGround())
                         && entityAnimationData.getValue(DELTA_Y) != 0
                         && ticksAfterSwitchingLegs < 15;
         entityAnimationData.incrementInTicksFromCondition(JUMP_WEIGHT, isJumping, 3, 4);
@@ -189,7 +189,7 @@ public class PlayerPartAnimator extends LivingEntityPartAnimator<Player, PlayerM
         entityAnimationData.incrementInTicksFromCondition(FAST_FALL_WEIGHT, livingEntity.fallDistance > 2, 24, 2);
         entityAnimationData.incrementInFramesOrResetFromCondition(FALL_IMPACT_TIMER, entityAnimationData.getValue(FAST_FALL_WEIGHT) > 0, 20);
 
-        entityAnimationData.incrementInTicksFromCondition(ON_GROUND_WEIGHT, livingEntity.isOnGround(), 6, 6);
+        entityAnimationData.incrementInTicksFromCondition(ON_GROUND_WEIGHT, livingEntity.onGround(), 6, 6);
 
         //setAnimationTimer("vertical_blocks_per_second", (float) (livingEntity.getY() - livingEntity.yo) * 20);
         entityAnimationData.incrementInTicksFromCondition(CLIMBING_UP_WEIGHT, livingEntity.onClimbable() && entityAnimationData.getValue(DELTA_Y) >= 0, 8, 8);
