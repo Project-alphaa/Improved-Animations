@@ -43,7 +43,7 @@ We apologize for any inconvenience this may have caused. If you are interested i
 ![](https://i.imgur.com/j8YAnhl.png)
 
 ### **🛠 Contributing**
-If anyone wishes to add or maintain mod support, please feel free to do so. Just ensure to contact me through my Discord server if you need any help.
+If anyone wishes to add feature or maintain mod support, please feel free to do so. Just ensure to contact me through my Discord server if you need any help.
 
 ![](https://i.imgur.com/j8YAnhl.png)
 
