@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[44,)"
+loaderVersion="[0,)"
 license="MIT"
 
 [[mods]]
@@ -19,15 +19,8 @@ Minecraft Animations Mod
     catalogueImageIcon="pack.png"
 
 [[dependencies.improved_animations]]
-    modId="forge"
-    mandatory=true
-    versionRange="[44,)"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.improved_animations]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.3,1.20)"
+    versionRange="[1.20.4,1.21)"
     ordering="NONE"
     side="BOTH"
