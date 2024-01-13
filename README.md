@@ -27,21 +27,10 @@ We apologize for any inconvenience this may have caused. If you are interested i
 
 ---
 
-### **🙎‍♂️ Contributors**
-
-- TrainGuy9512 (Former Author)
-- MincraftEinstein (Author)
-- Qboi123 (Author)
-- Kelvin285 (Contributor)
-- fmbellomy (Contributor)
-- mmm1245 (Contributor)
-
----
-
 ### **📚 FAQ**
 **Q:** Does this mod have any dependency?
 <br>
-**A:** No.
+**A:** no.
 <br><br>
 **Q:** Can I use this mod in my modpack?
 <br>
@@ -50,7 +39,18 @@ We apologize for any inconvenience this may have caused. If you are interested i
 **Q:** What are the different game versions that this mod will support?
 <br>
 **A:** Currently only version 1.19.3. If there is a high demand we will provide a 1.20 version.
-<br><br>
-**Q:** I would like to contribute to or maintain the mod. Would I be able to do so?
-<br>
-**A:** Of course, you can do both or help add a feature. Just make sure to contact me through my Discord server.
+
+![](https://i.imgur.com/j8YAnhl.png)
+
+### **🛠 Contributing**
+If anyone wishes to add or maintain mod support, please feel free to do so. Just ensure to contact me through my Discord server if you need any help.
+
+![](https://i.imgur.com/j8YAnhl.png)
+
+### **🙎‍♂️ Additional Credits:**
+- TrainGuy9512 (Former Author)
+- MincraftEinstein (Author)
+- Qboi123 (Author)
+- Kelvin285 (Contributor)
+- fmbellomy (Contributor)
+- mmm1245 (Contributor)
