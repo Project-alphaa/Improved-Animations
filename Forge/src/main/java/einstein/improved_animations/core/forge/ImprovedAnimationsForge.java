@@ -1,11 +1,13 @@
 package einstein.improved_animations.core.forge;
 
 import einstein.improved_animations.ImprovedAnimations;
+import einstein.improved_animations.api.ImprovedAnimationsApi;
 import einstein.improved_animations.util.data.TimelineGroupDataLoader;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -22,6 +24,9 @@ public class ImprovedAnimationsForge {
     @OnlyIn(Dist.CLIENT)
     void clientSetup(FMLClientSetupEvent event) {
         ImprovedAnimations.onClientInit();
+        if(ModList.get().isLoaded("notenoughanimations")) {
+            ImprovedAnimationsApi.registerAnimationHandler(new NotEnoughAnimationsHandler());
+        }
     }
 
     @OnlyIn(Dist.CLIENT)

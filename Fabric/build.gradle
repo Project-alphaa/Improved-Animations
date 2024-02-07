@@ -22,6 +22,7 @@ dependencies {
     implementation project(":Common")
 
     modImplementation "com.terraformersmc:modmenu:${modmenu_v}"
+    modImplementation "maven.modrinth:not-enough-animations:lODpunva"
 }
 
 loom {

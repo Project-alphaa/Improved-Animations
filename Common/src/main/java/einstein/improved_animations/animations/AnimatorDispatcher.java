@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
 import einstein.improved_animations.ImprovedAnimations;
 import einstein.improved_animations.animations.entity.LivingEntityPartAnimator;
+import einstein.improved_animations.api.ImprovedAnimationsApi;
 import einstein.improved_animations.util.animation.BakedPose;
 
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import java.util.UUID;
 
 import einstein.improved_animations.util.data.EntityAnimationData;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.PlayerModel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 
@@ -28,6 +30,18 @@ public class AnimatorDispatcher {
 
     @SuppressWarnings("unchecked")
     public <T extends LivingEntity, M extends EntityModel<T>> boolean animateEntity(T livingEntity, M entityModel, PoseStack poseStack, float partialTicks){
+        if(ImprovedAnimationsApi.moddedAnimationRunning(livingEntity)) {
+            if(entityModel instanceof PlayerModel<?> playerModel) {
+                // reset offsets, as vanilla doesn't touch them
+                playerModel.head.setPos(0, 0, 0);
+                playerModel.body.setPos(0, 0, 0);
+                playerModel.leftArm.setPos(0, 0, 0);
+                playerModel.rightArm.setPos(0, 0, 0);
+                playerModel.leftLeg.setPos(0, 0, 0);
+                playerModel.rightLeg.setPos(0, 0, 0);
+            }
+            return false;
+        }
         if(entityAnimationDataMap.containsKey(livingEntity.getUUID())){
             if(ImprovedAnimations.ENTITY_ANIMATORS.contains(livingEntity.getType())){
                 LivingEntityPartAnimator<T, M> livingEntityPartAnimator = (LivingEntityPartAnimator<T, M>) ImprovedAnimations.ENTITY_ANIMATORS.get(livingEntity.getType());

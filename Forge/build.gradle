@@ -81,7 +81,7 @@ dependencies {
     compileOnly project(":Common")
     minecraft "net.minecraftforge:forge:${mc_v}-${forge_v}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
+    implementation fg.deobf("maven.modrinth:not-enough-animations:YsF3W35k")
 //    implementation fg.deobf("curse.maven:catalogue-459701:${catalogue_v}")
 //    implementation fg.deobf("curse.maven:configured-457570:${configured_v}")
 }
