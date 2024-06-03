@@ -3,7 +3,7 @@
 ![image](https://github.com/Alpha-thebaby/ImprovedAnimations/assets/115327854/8f5e6c1a-fa6c-4152-a0ce-98d4b266e579)
 
 ![](https://img.shields.io/badge/Mod_Loader-Fabric%20%26%20Forge-6a6a6a?style=for-the-badge&labelColor=272727)
-[![Alpha's Discord](https://img.shields.io/badge/Alpha%27s%20Discord-6a6a6a?style=for-the-badge&labelColor=272727&logo=discord)](https://discord.gg/the-alpha-server-852655613669277777)
+[![Discord](https://img.shields.io/badge/%20Discord-6a6a6a?style=for-the-badge&labelColor=272727&logo=discord)](https://discord.gg/rtEGCzbZym)
 
 ### **📘 Description**
 We are excited to announce our latest addition to enhance your Minecraft experience. Our new Minecraft Improved Animations mod feature a range of cool animations that make the game more enjoyable to play. From basic movements like walking and sprinting to more complex actions like jumping, sprint-jumping, swimming, sword slashes, fist punching, sneaking, and falling - our animations will make exploring Minecraft much more fun. So, get ready to immerse yourself in the game and have a blast!
