@@ -35,9 +35,9 @@ We apologize for any inconvenience this may have caused. If you are interested i
 <br>
 **A:** Yes, feel free to use this mod in your modpack.
 <br><br>
-**Q:** I have an inquiry about something?
+**Q:** I have an inquiry about something
 <br>
-**A:** Ask away in the comments or on the Discord server, and we will try our best to respond.
+**A:** Ask away in the comments or on the Discord server, and we will do our best to respond.
 
 ![](https://i.imgur.com/j8YAnhl.png)
 
