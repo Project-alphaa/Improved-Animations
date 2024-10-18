@@ -37,7 +37,7 @@ We apologize for any inconvenience this may have caused. If you are interested i
 <br><br>
 **Q:** I have an inquiry about something. Can you help?
 <br>
-**A:** Ask away in the comments or on the Discord server, and we will do our best to respond.
+**A:** Ask away in the comments or on the Discord server, and we will try our best to respond.
 
 ![](https://i.imgur.com/j8YAnhl.png)
 
