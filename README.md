@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/badge/%20Discord-6a6a6a?style=for-the-badge&labelColor=272727&logo=discord)](https://discord.gg/rtEGCzbZym)
 
 ### **📘 Description**
-We are excited to announce our latest addition to enhance your Minecraft experience. Our new Minecraft Improved Animations mod feature a range of cool animations that make the game more enjoyable to play. From basic movements like walking and sprinting to more complex actions like jumping, sprint-jumping, swimming, sword slashes, fist punching, sneaking, and falling - our animations will make exploring Minecraft much more fun. So, get ready to immerse yourself in the game and have a blast!
+We are excited to announce our latest addition to enhance your Minecraft experience. Our new Minecraft Improved Animations mod features a range of cool animations that make the game more enjoyable, from basic movements like walking and sprinting to more complex actions like jumping, sprint-jumping, swimming, sword slashes, fist punching, sneaking, and falling. So, get ready to immerse yourself!
 
 ---
 
