@@ -1,5 +1,3 @@
-# Improved Animations
-
 ![image](https://github.com/Alpha-thebaby/ImprovedAnimations/assets/115327854/8f5e6c1a-fa6c-4152-a0ce-98d4b266e579)
 
 ![](https://img.shields.io/badge/Mod_Loader-Fabric%20%26%20Forge-6a6a6a?style=for-the-badge&labelColor=272727)
