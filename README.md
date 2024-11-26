@@ -44,7 +44,7 @@ If anyone wishes to add feature or maintain mod support, please feel free to do 
 
 ![](https://i.imgur.com/j8YAnhl.png)
 
-### **🙎‍♂️ Additional Credits:**
+### **🙎‍♂️ Additional Credits**
 - TrainGuy9512 (Former Author)
 - MincraftEinstein (Author)
 - Qboi123 (Author)
